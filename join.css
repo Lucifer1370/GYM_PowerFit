@@ -1,0 +1,595 @@
+:root {
+    --primary-color: #ff4d4d;
+    --primary-light: #ff6b6b;
+    --primary-dark: #e63939;
+    --accent-color: #00c9a7;
+    --dark-bg: #121212;
+    --dark-bg-lighter: #1e1e1e;
+    --dark-bg-lightest: #2d2d2d;
+    --text-color: #f0f0f0;
+    --text-muted: #a0a0a0;
+    --border-color: #333;
+    --card-bg: #1e1e1e;
+    --success-color: #4caf50;
+    --warning-color: #ff9800;
+    --danger-color: #f44336;
+    --info-color: #2196f3;
+    --font-main: 'Montserrat', sans-serif;
+    --transition: all 0.3s ease;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-title span {
+    color: var(--primary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-block;
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+    
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: rgba(18, 18, 18, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-logo h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+}
+
+.nav-logo span {
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0 1rem;
+}
+
+.nav-link {
+    color: var(--text-color);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    bottom: 0;
+    left: 0;
+    transition: var(--transition);
+}
+
+.nav-link:hover:after, .nav-link.active:after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: var(--transition);
+    background-color: var(--text-color);
+}
+/* Hero & Page Headings */
+.hero {
+    padding: 80px 0;
+    text-align: left;
+    background-color: #000;
+    
+}
+
+.hero h1, .container h1 {
+   
+    font-size: 3rem;
+    font-weight: 700;
+    position: relative;
+    top: 80px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero h2, .container h2 {
+    position: relative;
+    top: 80px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ff4d4d;
+    color: #ff4d4d;
+}
+
+/* Membership Plans */
+.membership-heading {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.membership-heading span {
+    color: #ff4d4d;
+}
+
+.plans-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.plan-card {
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    flex: 1;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.plan-card.popular {
+    border: 2px solid #ff4d4d;
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 77, 77, 0.2);
+}
+
+.popular-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ff4d4d;
+    color: #fff;
+    padding: 8px 15px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transform: translateX(30%) translateY(-10%) rotate(45deg);
+    width: 150px;
+    text-align: center;
+}
+
+.plan-header {
+    background-color: #1a1a1a;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.plan-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.plan-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ff4d4d;
+}
+
+.plan-price span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #aaa;
+}
+
+.plan-features {
+    padding: 30px 20px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.feature-included {
+    color: #4cd964;
+    margin-right: 10px;
+}
+
+.feature-excluded {
+    color: #ff3b30;
+    margin-right: 10px;
+}
+
+.plan-footer {
+    padding: 0 20px 30px;
+    text-align: center;
+}
+
+/* Registration Form */
+.registration-form {
+    background-color: #222;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    top: 50px;
+}
+
+.registration-form h3 {
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #ccc;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Date input styling */
+input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 15px;
+    position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+/* Date format placeholder */
+input[type="date"]::before {
+    color: #777;
+    content: attr(placeholder);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 77, 77, 0.3);
+    background-color: #2a2a2a;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input {
+    width: auto;
+    margin-right: 10px;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.membership-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.membership-option {
+    flex: 1;
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.membership-option:hover {
+    background-color: #333;
+}
+
+.membership-option.selected {
+    border-color: #ff4d4d;
+    background-color: rgba(255, 77, 77, 0.1);
+}
+
+.membership-option h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.membership-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ff4d4d;
+    margin-bottom: 5px;
+}
+
+.membership-option p {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+.btn{
+    border: 2px solid red;
+    height: 250px;
+}
+
+.form-footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.form-footer a {
+    color: #ff4d4d;
+    font-weight: 500;
+}
+.btn{
+    height: 2rem;
+    width: 13rem;
+    border-radius: 2rem;
+    background-color: #ff4d4d;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .plans-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .plan-card {
+        width: 100%;
+        max-width: 500px;
+    }
+    
+    .plan-card.popular {
+        transform: scale(1);
+    }
+    
+    .membership-options {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #000;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        padding: 20px 0;
+    }
+    
+    .nav-item {
+        margin: 16px 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .registration-form {
+        padding: 30px 20px;
+    }
+}
+

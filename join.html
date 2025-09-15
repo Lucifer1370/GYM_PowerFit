@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerFit - Registration</title>
+    <link rel="stylesheet" href="./join.css">
+    <link rel="stylesheet" href="./about.html">
+    <link rel="stylesheet" href="./services.html">
+    <link rel="stylesheet" href="./Contact.html">
+    <link rel="stylesheet" href="./join.html">
+    <link rel="stylesheet" href="./admin.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    
+</head>
+<body>
+   
+    <header>
+        <nav class="navbar">
+            <div class="nav-logo">
+                <h1>Power<span>Fit</span></h1>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="Home.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="join.html" class="nav-link btn-primary">Join Now</a></li>
+                <li class="nav-item"><a href="admin.html" class="nav-link">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <center><h1>JOIN POWERFIT TODAY</h1>
+            <h2>Transform Your Body, Transform Your Life</h2></center>
+        
+        <div class="registration-form">
+            <h3>Personal Information</h3>
+            
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number">
+            </div>
+            
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob">
+            </div>
+            
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender">
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                    <option value="prefer-not">Prefer not to say</option>
+                </select>
+            </div>
+            
+            <h3>Membership Options</h3>
+            
+            <div class="membership-options">
+                <div class="membership-option">
+                    <h3>Basic</h3>
+                    <div class="membership-price"><span>₹</span>999</div>
+                    <p>Monthly</p>
+                </div>
+                
+                <div class="membership-option selected">
+                    <h3>Premium</h3>
+                    <div class="membership-price"><span>₹</span>1999</div>
+                    <p>Monthly</p>
+                </div>
+                
+                <div class="membership-option">
+                    <h3>Elite</h3>
+                    <div class="membership-price"><span>₹</span>2999</div>
+                    <p>Monthly</p>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="goals">Fitness Goals</label>
+                <select id="goals">
+                    <option value="" disabled selected>Select your primary goal</option>
+                    <option value="weight-loss">Weight Loss</option>
+                    <option value="muscle-gain">Muscle Gain</option>
+                    <option value="endurance">Endurance Training</option>
+                    <option value="flexibility">Flexibility & Mobility</option>
+                    <option value="general">General Fitness</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Create Password</label>
+                <input type="password" id="password" placeholder="Create a secure password">
+            </div>
+            
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm your password">
+            </div>
+            
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="terms">
+                <label for="terms">I agree to the Terms and Conditions</label>
+            </div>
+            
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="newsletter">
+                <label for="newsletter">Subscribe to our newsletter for fitness tips and special offers</label>
+            </div>
+            
+            <a href="./new.html" class="btn-primary">Complete Registration</a>
+            
+            <div class="form-footer">
+                Already a member? <a href="./log.html">Log in here</a>
+            </div>
+        </div>
+    </div>
+    <script src="./join.js"></script>
+</body>
+</html>
