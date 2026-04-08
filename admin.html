@@ -1,839 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PowerFit - Admin Dashboard</title>
-  <link rel="stylesheet" href="./about.html">
-  <link rel="stylesheet" href="./services.html">
-  <link rel="stylesheet" href="./Contact.html">
-  <link rel="stylesheet" href="./join.html">
-  <link rel="stylesheet" href="./admin.html">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-    --primary-color: #ff4d4d;
-    --primary-light: #ff6b6b;
-    --primary-dark: #e63939;
-    --accent-color: #00c9a7;
-    --dark-bg: #121212;
-    --dark-bg-lighter: #1e1e1e;
-    --dark-bg-lightest: #2d2d2d;
-    --text-color: #f0f0f0;
-    --text-muted: #a0a0a0;
-    --border-color: #333;
-    --card-bg: #1e1e1e;
-    --success-color: #4caf50;
-    --warning-color: #ff9800;
-    --danger-color: #f44336;
-    --info-color: #2196f3;
-    --font-main: 'Montserrat', sans-serif;
-    --transition: all 0.3s ease;
-    --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Reset & Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: var(--font-main);
-    background-color: var(--dark-bg);
-    color: var(--text-color);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
-    color: var(--text-color);
-    transition: var(--transition);
-}
-
-ul {
-    list-style: none;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-p {
-    margin-bottom: 1rem;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    position: relative;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.section-title span {
-    color: var(--primary-color);
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
-    font-weight: 600;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-    transition: var(--transition);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-}
-
-.btn-primary:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--text-color);
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
-    font-weight: 600;
-    display: inline-block;
-    border: 2px solid var(--primary-color);
-    cursor: pointer;
-    transition: var(--transition);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-}
-
-.btn-secondary:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow);
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    background-color: rgba(18, 18, 18, 0.9);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.nav-logo h1 {
-    font-size: 1.8rem;
-    margin-bottom: 0;
-}
-
-.nav-logo span {
-    color: var(--primary-color);
-}
-
-.nav-menu {
-    display: flex;
-    align-items: center;
-}
-
-.nav-item {
-    margin: 0 1rem;
-}
-
-.nav-link {
-    color: var(--text-color);
-    font-weight: 500;
-    position: relative;
-    padding: 0.5rem 0;
-}
-
-.nav-link:after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: var(--primary-color);
-    bottom: 0;
-    left: 0;
-    transition: var(--transition);
-}
-
-.nav-link:hover:after, .nav-link.active:after {
-    width: 100%;
-}
-
-.nav-link.active {
-    color: var(--primary-color);
-}
-
-.hamburger {
-    display: none;
-    cursor: pointer;
-}
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition: var(--transition);
-    background-color: var(--text-color);
-}
-
-    
-    .admin-container {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .admin-header {
-      
-      text-align: center;
-      margin-bottom: 2rem;
-      position: relative;
-      top: 2.5rem;
-    }
-    
-    .admin-header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    
-    .dashboard-stats {
-      
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
-      margin-top: 2.9rem;
-    }
-    
-    .stat-card {
-      background-color: #1a1a1a;
-      border-radius: 10px;
-      padding: 1.5rem;
-      text-align: center;
-    }
-    
-    .stat-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      color: #ff4d4d;
-    }
-    
-    .stat-card p {
-      font-size: 2rem;
-      font-weight: bold;
-    }
-    
-    .admin-content {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 2rem;
-    }
-    
-    .admin-sidebar {
-      background-color: #1a1a1a;
-      border-radius: 10px;
-      padding: 1.5rem;
-    }
-    
-    .admin-sidebar h2 {
-      margin-bottom: 1.5rem;
-      color: #ff4d4d;
-      font-size: 1.5rem;
-    }
-    
-    .sidebar-menu {
-      list-style: none;
-    }
-    
-    .sidebar-menu li {
-      margin-bottom: 1rem;
-    }
-    
-    .sidebar-menu a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      padding: 0.8rem 1rem;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-    
-    .sidebar-menu a:hover, .sidebar-menu a.active {
-      background-color: #2a2a2a;
-      color: #ff4d4d;
-    }
-    
-    .admin-main {
-      background-color: #1a1a1a;
-      border-radius: 10px;
-      padding: 1.5rem;
-    }
-    
-    .admin-main h2 {
-      margin-bottom: 1.5rem;
-      color: #ff4d4d;
-      font-size: 1.5rem;
-    }
-    
-    .recent-members {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    
-    .recent-members th, .recent-members td {
-      padding: 0.8rem;
-      text-align: left;
-      border-bottom: 1px solid #333;
-    }
-    
-    .recent-members th {
-      color: #ff4d4d;
-    }
-    
-    .status {
-      padding: 0.3rem 0.8rem;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: bold;
-    }
-    
-    .status.active {
-      background-color: rgba(0, 255, 0, 0.2);
-      color: #00ff00;
-    }
-    
-    .status.inactive {
-      background-color: rgba(255, 0, 0, 0.2);
-      color: #ff4d4d;
-    }
-    
-    .action-btn {
-      background-color: transparent;
-      border: 1px solid #ff4d4d;
-      color: #ff4d4d;
-      padding: 0.3rem 0.8rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .action-btn:hover {
-      background-color: #ff4d4d;
-      color: white;
-    }
-    
-    @media (max-width: 768px) {
-      .admin-content {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerFit Gym | Admin Dashboard</title>
+    <link rel="stylesheet" href="./global.css">
+    <link rel="stylesheet" href="./admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
-<body>
-  <header>
-    <nav class="navbar">
-        <div class="nav-logo">
-            <h1>Power<span>Fit</span></h1>
+
+<body class="admin-body">
+    <header>
+        <nav class="navbar">
+            <div class="nav-logo">
+                <h1>Power<span>Fit</span></h1>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="Home.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="Contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="admin.html" class="nav-link active">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container fade-in-up">
+        <div class="admin-header">
+            <h1>ADMIN <span>DASHBOARD</span></h1>
+            <p>Master Control Panel for Fitness Operations</p>
         </div>
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+
+        <div class="dashboard-stats" style="display: none;">
+            <div class="stat-card">
+                <h3>TOTAL MEMBERS</h3>
+                <p>0</p>
+            </div>
+            <div class="stat-card">
+                <h3>ACTIVE PLANS</h3>
+                <p>0</p>
+            </div>
+            <div class="stat-card">
+                <h3>MONTHLY REVENUE</h3>
+                <p>₹0</p>
+            </div>
+            <div class="stat-card">
+                <h3>ATTENDANCE RATE</h3>
+                <p>85%</p>
+            </div>
         </div>
-        <ul class="nav-menu">
-            <li class="nav-item"><a href="Home.html" class="nav-link active">Home</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-            <li class="nav-item"><a href="join.html" class="nav-link btn-primary">Join Now</a></li>
-            <li class="nav-item"><a href="admin.html" class="nav-link">Admin</a></li>
-        </ul>
-    </nav>
-</header>
-  
-  <div class="admin-container">
-    <div class="admin-header">
-      <h1>ADMIN DASHBOARD</h1>
-      <p>Manage your fitness center operations</p>
-    </div>
-    
-    <div class="dashboard-stats">
-      <div class="stat-card">
-        <h3>TOTAL MEMBERS</h3>
-        <p>458</p>
-      </div>
-      <div class="stat-card">
-        <h3>ACTIVE PLANS</h3>
-        <p>312</p>
-      </div>
-      <div class="stat-card">
-        <h3>REVENUE (MONTHLY)</h3>
-        <p>$45,980</p>
-      </div>
-      <div class="stat-card">
-        <h3>CLASS ATTENDANCE</h3>
-        <p>85%</p>
-      </div>
-    </div>
-    
-    <div class="admin-content">
-      <div class="admin-sidebar">
-        <h2>MANAGEMENT</h2>
-        <ul class="sidebar-menu">
-          <li><a href="#" class="active">Dashboard</a></li>
-          <li><a href="#members">Members</a></li>
-          <li><a href="#trainers">Trainers</a></li>
-          <li><a href="#classes">Classes</a></li>
-          <li><a href="#memberships">Memberships</a></li>
-          <li><a href="#equipment">Equipment</a></li>
-          <li><a href="#reports">Reports</a></li>
-          <li><a href="#settings">Settings</a></li>
-        </ul>
-      </div>
-      
-      <div class="admin-main">
-        <h2>RECENT MEMBERS</h2>
-        <table class="recent-members">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Plan</th>
-              <th>Join Date</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>Sahil J</td>
-              <td>Premium</td>
-              <td>Apr 15, 2025</td>
-              <td><span class="status active">Active</span></td>
-              <td><button class="action-btn">View</button></td>
-            </tr>
-            <tr>
-              <td>Manish A</td>
-              <td>Elite</td>
-              <td>Apr 14, 2025</td>
-              <td><span class="status active">Active</span></td>
-              <td><button class="action-btn">View</button></td>
-            </tr>
-            <tr>
-              <td>Sawan K</td>
-              <td>Basic</td>
-              <td>Apr 10, 2025</td>
-              <td><span class="status inactive">Inactive</span></td>
-              <td><button class="action-btn">View</button></td>
-            </tr>
-            <tr>
-              <td>James W</td>
-              <td>Premium</td>
-              <td>Apr 08, 2025</td>
-              <td><span class="status active">Active</span></td>
-              <td><button class="action-btn">View</button></td>
-            </tr>
-            <tr>
-              <td>Harsh J</td>
-              <td>Elite</td>
-              <td>Apr 05, 2025</td>
-              <td><span class="status active">Active</span></td>
-              <td><button class="action-btn">View</button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-    // Handle mobile navigation menu
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
 
-    if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
+        <div class="admin-content" style="display: none;">
+            <aside class="admin-sidebar">
+                <h2>MANAGEMENT</h2>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="active"><i class="fas fa-tachometer-alt" style="width:25px;"></i>
+                            Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-users" style="width:25px;"></i> Members</a></li>
+                    <li><a href="#"><i class="fas fa-dumbbell" style="width:25px;"></i> Trainers</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-alt" style="width:25px;"></i> Classes</a></li>
+                    <li><a href="#"><i class="fas fa-id-card" style="width:25px;"></i> Memberships</a></li>
+                    <li><a href="#"><i class="fas fa-cog" style="width:25px;"></i> Settings</a></li>
+                </ul>
+            </aside>
+
+            <section class="admin-main">
+                <h2>RECENT MEMBERS</h2>
+                <div class="table-responsive">
+                    <table class="recent-members">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Plan</th>
+                                <th>Join Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dynamic content populated by admin.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Hamburger Menu functionality
+        document.querySelector('.hamburger').addEventListener('click', function () {
+            this.classList.toggle('active');
+            document.querySelector('.nav-menu').classList.toggle('active');
         });
-    }
-
-    // Admin authentication (simple implementation)
-    // In a real app, you would have proper admin authentication
-    let isAdminAuthenticated = localStorage.getItem('powerfit_admin_auth') === 'true';
-    
-    // For first-time setup, create admin credentials
-    if (!localStorage.getItem('powerfit_admin')) {
-        const defaultAdmin = {
-            username: 'admin',
-            password: 'admin123' // In a real app, use a secure password and hashing
-        };
-        localStorage.setItem('powerfit_admin', JSON.stringify(defaultAdmin));
-    }
-
-    // Check if admin page is loading for the first time or requires authentication
-    if (!isAdminAuthenticated) {
-        showAdminLoginModal();
-    } else {
-        loadDashboardData();
-    }
-
-    // Function to show admin login modal
-    function showAdminLoginModal() {
-        // Create modal overlay
-        const modalOverlay = document.createElement('div');
-        modalOverlay.className = 'modal-overlay';
-        modalOverlay.style.position = 'fixed';
-        modalOverlay.style.top = '0';
-        modalOverlay.style.left = '0';
-        modalOverlay.style.width = '100%';
-        modalOverlay.style.height = '100%';
-        modalOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-        modalOverlay.style.display = 'flex';
-        modalOverlay.style.justifyContent = 'center';
-        modalOverlay.style.alignItems = 'center';
-        modalOverlay.style.zIndex = '1001';
-
-        // Create modal content
-        const modalContent = document.createElement('div');
-        modalContent.className = 'modal-content';
-        modalContent.style.backgroundColor = '#1a1a1a';
-        modalContent.style.padding = '2rem';
-        modalContent.style.borderRadius = '10px';
-        modalContent.style.width = '90%';
-        modalContent.style.maxWidth = '400px';
-        modalContent.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
-
-        // Create modal HTML content
-        modalContent.innerHTML = `
-            <h2 style="color: #ff4d4d; margin-bottom: 1.5rem; text-align: center;">ADMIN LOGIN</h2>
-            <form id="admin-login-form">
-                <div style="margin-bottom: 1.5rem;">
-                    <label for="admin-username" style="display: block; margin-bottom: 0.5rem;">Username</label>
-                    <input type="text" id="admin-username" placeholder="Enter admin username" 
-                           style="width: 100%; padding: 0.8rem; background: #2a2a2a; border: 1px solid #333; 
-                                  border-radius: 5px; color: white; font-family: inherit;" required>
-                </div>
-                <div style="margin-bottom: 1.5rem;">
-                    <label for="admin-password" style="display: block; margin-bottom: 0.5rem;">Password</label>
-                    <input type="password" id="admin-password" placeholder="Enter admin password" 
-                           style="width: 100%; padding: 0.8rem; background: #2a2a2a; border: 1px solid #333; 
-                                  border-radius: 5px; color: white; font-family: inherit;" required>
-                </div>
-                <div id="login-error" style="color: #f44336; margin-bottom: 1rem; display: none;"></div>
-                <button type="submit" 
-                        style="width: 100%; background-color: #ff4d4d; color: white; padding: 1rem; 
-                               border: none; border-radius: 5px; cursor: pointer; font-weight: bold; 
-                               text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">
-                    Login
-                </button>
-            </form>
-        `;
-
-        // Append modal to body
-        modalOverlay.appendChild(modalContent);
-        document.body.appendChild(modalOverlay);
-
-        // Handle admin login form submission
-        const adminLoginForm = document.getElementById('admin-login-form');
-        adminLoginForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const username = document.getElementById('admin-username').value;
-            const password = document.getElementById('admin-password').value;
-            const adminData = JSON.parse(localStorage.getItem('powerfit_admin'));
-            
-            if (username === adminData.username && password === adminData.password) {
-                // Set admin authentication
-                localStorage.setItem('powerfit_admin_auth', 'true');
-                
-                // Remove modal
-                document.body.removeChild(modalOverlay);
-                
-                // Load dashboard data
-                loadDashboardData();
-            } else {
-                // Show error
-                const loginError = document.getElementById('login-error');
-                loginError.textContent = 'Invalid username or password';
-                loginError.style.display = 'block';
-            }
-        });
-    }
-
-    // Function to load dashboard data
-    function loadDashboardData() {
-        // Get users from localStorage
-        const users = JSON.parse(localStorage.getItem('powerfit_users')) || [];
-        
-        // Update dashboard stats
-        updateDashboardStats(users);
-        
-        // Update recent members table
-        updateRecentMembersTable(users);
-
-        // Add logout button to sidebar
-        addLogoutButton();
-    }
-
-    // Function to update dashboard stats
-    function updateDashboardStats(users) {
-        // Get stat cards
-        const statCards = document.querySelectorAll('.stat-card p');
-        
-        if (statCards.length >= 4) {
-            // Update total members count
-            statCards[0].textContent = users.length;
-            
-            // Count active plans (all registered users are considered active in this simple implementation)
-            statCards[1].textContent = users.length;
-            
-            // Calculate total revenue (monthly)
-            let totalRevenue = 0;
-            users.forEach(user => {
-                // Extract numeric value from membership price (e.g., "$49.99" -> 49.99)
-                const price = parseFloat(user.membershipPrice?.replace('₹', '') || 0);
-                totalRevenue += price;
-            });
-            statCards[2].textContent = `₹${totalRevenue.toFixed(2)}`;
-            
-            // Class attendance (placeholder - in a real app you would calculate this)
-            statCards[3].textContent = "85%"; // Keeping the default value
-        }
-    }
-
-    // Function to update recent members table
-    function updateRecentMembersTable(users) {
-        const membersTableBody = document.querySelector('.recent-members tbody');
-        
-        if (membersTableBody) {
-            // Clear existing rows
-            membersTableBody.innerHTML = '';
-            
-            // Sort users by most recent first (we don't have a join date in our data, so we'll use the array order)
-            // In a real app, you would store and sort by actual registration date
-            const recentUsers = [...users].reverse().slice(0, 5); // Get last 5 registered users
-            
-            if (recentUsers.length === 0) {
-                // If no users, show a message
-                const noUsersRow = document.createElement('tr');
-                noUsersRow.innerHTML = `<td colspan="5" style="text-align: center;">No members registered yet</td>`;
-                membersTableBody.appendChild(noUsersRow);
-            } else {
-                // Add user rows
-                recentUsers.forEach((user, index) => {
-                    // Create a new row
-                    const row = document.createElement('tr');
-                    
-                    // Format join date (using current date for demonstration)
-                    const joinDate = new Date();
-                    joinDate.setDate(joinDate.getDate() - index); // Subtract days to simulate different join dates
-                    const formattedDate = joinDate.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' });
-                    
-                    // Create row HTML
-                    row.innerHTML = `
-                        <td>${user.fullname}</td>
-                        <td>${user.membership || 'Basic'}</td>
-                        <td>${formattedDate}</td>
-                        <td><span class="status active">Active</span></td>
-                        <td><button class="action-btn" data-email="${user.email}">View</button></td>
-                    `;
-                    
-                    // Append row to table
-                    membersTableBody.appendChild(row);
-                });
-                
-                // Add event listeners to view buttons
-                const viewButtons = document.querySelectorAll('.action-btn');
-                viewButtons.forEach(button => {
-                    button.addEventListener('click', () => {
-                        const userEmail = button.getAttribute('data-email');
-                        showUserDetails(userEmail);
-                    });
-                });
-            }
-        }
-    }
-
-    // Function to show user details
-    function showUserDetails(email) {
-        // Get users from localStorage
-        const users = JSON.parse(localStorage.getItem('powerfit_users')) || [];
-        
-        // Find user with matching email
-        const user = users.find(user => user.email === email);
-        
-        if (user) {
-            // Create modal overlay
-            const modalOverlay = document.createElement('div');
-            modalOverlay.className = 'modal-overlay';
-            modalOverlay.style.position = 'fixed';
-            modalOverlay.style.top = '0';
-            modalOverlay.style.left = '0';
-            modalOverlay.style.width = '100%';
-            modalOverlay.style.height = '100%';
-            modalOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-            modalOverlay.style.display = 'flex';
-            modalOverlay.style.justifyContent = 'center';
-            modalOverlay.style.alignItems = 'center';
-            modalOverlay.style.zIndex = '1001';
-            
-            // Create modal content
-            const modalContent = document.createElement('div');
-            modalContent.className = 'modal-content';
-            modalContent.style.backgroundColor = '#1a1a1a';
-            modalContent.style.padding = '2rem';
-            modalContent.style.borderRadius = '10px';
-            modalContent.style.width = '90%';
-            modalContent.style.maxWidth = '500px';
-            modalContent.style.maxHeight = '80vh';
-            modalContent.style.overflowY = 'auto';
-            modalContent.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
-            
-            // Format details with proper labels
-            const userDetailsHTML = `
-                <h2 style="color: #ff4d4d; margin-bottom: 1.5rem; text-align: center;">MEMBER DETAILS</h2>
-                <div style="margin-bottom: 1rem;">
-                    <strong style="color: #ff4d4d;">Name:</strong> ${user.fullname}
-                </div>
-                <div style="margin-bottom: 1rem;">
-                    <strong style="color: #ff4d4d;">Email:</strong> ${user.email}
-                </div>
-                <div style="margin-bottom: 1rem;">
-                    <strong style="color: #ff4d4d;">Phone:</strong> ${user.phone || 'Not provided'}
-                </div>
-                <div style="margin-bottom: 1rem;">
-                    <strong style="color: #ff4d4d;">Date of Birth:</strong> ${user.dob || 'Not provided'}
-                </div>
-                <div style="margin-bottom: 1rem;">
-                    <strong style="color: #ff4d4d;">Gender:</strong> ${user.gender || 'Not provided'}
-                </div>
-                <div style="margin-bottom: 1rem;">
-                    <strong style="color: #ff4d4d;">Membership:</strong> ${user.membership || 'Basic'}
-                </div>
-                <div style="margin-bottom: 1rem;">
-                    <strong style="color: #ff4d4d;">Price:</strong> ${user.membershipPrice || 'Not available'}
-                </div>
-                <div style="margin-bottom: 1rem;">
-                    <strong style="color: #ff4d4d;">Fitness Goals:</strong> ${user.goals || 'Not specified'}
-                </div>
-                <div style="margin-bottom: 1.5rem;">
-                    <strong style="color: #ff4d4d;">Newsletter:</strong> ${user.newsletter ? 'Subscribed' : 'Not subscribed'}
-                </div>
-                <div style="display: flex; justify-content: space-between;">
-                    <button id="close-modal" style="background-color: #333; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 5px; cursor: pointer;">Close</button>
-                    <button id="delete-user" data-email="${user.email}" style="background-color: #f44336; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 5px; cursor: pointer;">Delete User</button>
-                </div>
-            `;
-            
-            // Set modal content
-            modalContent.innerHTML = userDetailsHTML;
-            
-            // Append modal to body
-            modalOverlay.appendChild(modalContent);
-            document.body.appendChild(modalOverlay);
-            
-            // Handle close button
-            document.getElementById('close-modal').addEventListener('click', () => {
-                document.body.removeChild(modalOverlay);
-            });
-            
-            // Handle delete button
-            document.getElementById('delete-user').addEventListener('click', (e) => {
-                const userEmail = e.target.getAttribute('data-email');
-                if (confirm('Are you sure you want to delete this user?')) {
-                    deleteUser(userEmail);
-                    document.body.removeChild(modalOverlay);
-                }
-            });
-        }
-    }
-
-    // Function to delete a user
-    function deleteUser(email) {
-        // Get users from localStorage
-        let users = JSON.parse(localStorage.getItem('powerfit_users')) || [];
-        
-        // Filter out the user with the matching email
-        users = users.filter(user => user.email !== email);
-        
-        // Save updated users array back to localStorage
-        localStorage.setItem('powerfit_users', JSON.stringify(users));
-        
-        // Reload dashboard data
-        loadDashboardData();
-        
-        // Show success message
-        alert('User deleted successfully');
-    }
-
-    // Function to add logout button to sidebar
-    function addLogoutButton() {
-        const sidebarMenu = document.querySelector('.sidebar-menu');
-        
-        if (sidebarMenu) {
-            // Check if logout button already exists
-            if (!document.getElementById('logout-button')) {
-                // Create logout list item
-                const logoutItem = document.createElement('li');
-                logoutItem.innerHTML = `<a href="#" id="logout-button" style="color: #f44336;">Logout</a>`;
-                
-                // Append to sidebar menu
-                sidebarMenu.appendChild(logoutItem);
-                
-                // Add event listener
-                document.getElementById('logout-button').addEventListener('click', (e) => {
-                    e.preventDefault();
-                    
-                    // Clear admin authentication
-                    localStorage.removeItem('powerfit_admin_auth');
-                    
-                    // Reload page
-                    window.location.reload();
-                });
-            }
-        }
-    }
-});
-  </script>
+    </script>
+    <script src="./admin.js"></script>
 </body>
+
 </html>

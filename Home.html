@@ -1,21 +1,15 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PowerFit Gym | Home</title>
-    <link rel="stylesheet" href="./Login.css">
-   <link rel="stylesheet" href="./Home.css">
-    <link rel="stylesheet" href="./about.html">
-    <link rel="stylesheet" href="./services.html">
-    <link rel="stylesheet" href="./Contact.html">
-    <link rel="stylesheet" href="./join.html">
-    <link rel="stylesheet" href="./admin.html">
+    <title>PowerFit Gym | Premium Fitness</title>
+    <link rel="stylesheet" href="./global.css">
+    <link rel="stylesheet" href="./Home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -33,188 +27,150 @@
                 <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="join.html" class="nav-link btn-primary">Join Now</a></li>
                 <li class="nav-item"><a href="admin.html" class="nav-link">Admin</a></li>
+                <li class="nav-item"><a href="join.html" class="btn-primary" style="padding: 0.6rem 1.5rem">Join Now</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>TRANSFORM YOUR BODY</h1>
-                <h2>Transform Your Life</h2>
-                <p>Elite training, premium equipment, and personalized plans to help you achieve your fitness goals.</p>
-                <div class="hero-btns">
-                    <a href="./join.html" class="btn-primary">Join Now</a>
-                    <a href="services.html" class="btn-secondary">View Plans</a>
+        <section class="page-banner hero">
+            <div class="banner-content fade-in-up">
+                <h1>TRANSFORM <span>YOUR BODY</span></h1>
+                <p style="font-size: 1.5rem; color: #fff; margin-bottom: 2rem; font-weight: 300;">Transform Your Life with Elite Training</p>
+                <div class="hero-btns" style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="./join.html" class="btn-primary">Start Free Trial</a>
+                    <a href="services.html" class="btn-secondary">View Programs</a>
                 </div>
             </div>
         </section>
 
         <section class="features">
-            <h2 class="section-title">Why Choose <span>PowerFit</span>?</h2>
-            <div class="feature-cards">
-                <div class="feature-card">
-                    <i class="fas fa-dumbbell"></i>
-                    <h3>State-of-Art Equipment</h3>
-                    <p>Latest fitness technology and premium equipment to optimize your workouts.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Expert Trainers</h3>
-                    <p>Certified professionals committed to helping you reach your fitness goals.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>24/7 Access</h3>
-                    <p>Train on your schedule with our round-the-clock facility access.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-heart"></i>
-                    <h3>Community Focus</h3>
-                    <p>Join a supportive community that motivates and inspires you.</p>
+            <div class="container">
+                <h2 class="section-title fade-in-up">Why Choose <span>PowerFit</span>?</h2>
+                <div class="feature-cards">
+                    <div class="premium-card feature-card fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="icon-wrapper"><i class="fas fa-dumbbell"></i></div>
+                        <h3>State-of-Art Equipment</h3>
+                        <p>Latest fitness technology and premium equipment to optimize your workouts.</p>
+                    </div>
+                    <div class="premium-card feature-card fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="icon-wrapper"><i class="fas fa-users"></i></div>
+                        <h3>Expert Trainers</h3>
+                        <p>Certified professionals committed to helping you reach your absolute peak.</p>
+                    </div>
+                    <div class="premium-card feature-card fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="icon-wrapper"><i class="fas fa-clock"></i></div>
+                        <h3>24/7 Access</h3>
+                        <p>Train exactly on your schedule with our round-the-clock facility access.</p>
+                    </div>
+                    <div class="premium-card feature-card fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="icon-wrapper"><i class="fas fa-fire"></i></div>
+                        <h3>Elite Community</h3>
+                        <p>Join a supportive, high-energy community that constantly motivates you.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="plans">
-            <h2 class="section-title">Membership <span>Plans</span></h2>
-            <div class="plan-cards">
-                <div class="plan-card">
-                    <div class="plan-header">
-                        <h3>Basic</h3>
-                        <p class="price">₹999<span>/month</span></p>
+            <div class="container">
+                <h2 class="section-title fade-in-up">Membership <span>Plans</span></h2>
+                <div class="plan-cards">
+                    <div class="premium-card plan-card fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="plan-header">
+                            <h3>Basic</h3>
+                            <p class="price">₹999<span>/mo</span></p>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Gym Access (6AM-10PM)</li>
+                            <li><i class="fas fa-check"></i> Basic Equipment</li>
+                            <li><i class="fas fa-check"></i> Locker Room Access</li>
+                            <li class="disabled"><i class="fas fa-times"></i> Personal Training</li>
+                            <li class="disabled"><i class="fas fa-times"></i> Group Classes</li>
+                        </ul>
+                        <a href="join.html" class="btn-secondary" style="width: 100%; text-align: center;">Select Plan</a>
                     </div>
-                    <div class="plan-features">
-                        <p><i class="fas fa-check"></i> Gym Access (6AM-10PM)</p>
-                        <p><i class="fas fa-check"></i> Basic Equipment</p>
-                        <p><i class="fas fa-check"></i> Locker Room Access</p>
-                        <p><i class="fas fa-times"></i> Personal Training</p>
-                        <p><i class="fas fa-times"></i> Group Classes</p>
+                    <div class="premium-card plan-card popular fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="popular-tag">Most Popular</div>
+                        <div class="plan-header">
+                            <h3>Premium</h3>
+                            <p class="price">₹1999<span>/mo</span></p>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> 24/7 Gym Access</li>
+                            <li><i class="fas fa-check"></i> All Equipment</li>
+                            <li><i class="fas fa-check"></i> Group Classes</li>
+                            <li><i class="fas fa-check"></i> Locker Room Access</li>
+                            <li class="disabled"><i class="fas fa-times"></i> Personal Training</li>
+                        </ul>
+                        <a href="join.html" class="btn-primary" style="width: 100%; text-align: center;">Select Plan</a>
                     </div>
-                    <a href="/join.html" class="btn-primary">Select Plan</a>
-                </div>
-                <div class="plan-card popular">
-                    <div class="popular-tag">Most Popular</div>
-                    <div class="plan-header">
-                        <h3>Premium</h3>
-                        <p class="price">₹1999<span>/month</span></p>
-                    </div>
-                    <div class="plan-features">
-                        <p><i class="fas fa-check"></i> 24/7 Gym Access</p>
-                        <p><i class="fas fa-check"></i> All Equipment</p>
-                        <p><i class="fas fa-check"></i> Group Classes</p>
-                        <p><i class="fas fa-check"></i> Locker Room Access</p>
-                        <p><i class="fas fa-times"></i> Personal Training</p>
-                    </div>
-                    <a href="/join.html" class="btn-primary">Select Plan</a>
-                </div>
-                <div class="plan-card">
-                    <div class="plan-header">
-                        <h3>Elite</h3>
-                        <p class="price">₹2999<span>/month</span></p>
-                    </div>
-                    <div class="plan-features">
-                        <p><i class="fas fa-check"></i> 24/7 Gym Access</p>
-                        <p><i class="fas fa-check"></i> All Equipment</p>
-                        <p><i class="fas fa-check"></i> Unlimited Group Classes</p>
-                        <p><i class="fas fa-check"></i> 2 PT Sessions/Month</p>
-                        <p><i class="fas fa-check"></i> Nutrition Counseling</p>
-                    </div>
-                    <a href="./join.html" class="btn-primary">Select Plan</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta">
-            <div class="cta-content">
-                <h2>Ready to start your fitness journey?</h2>
-                <p>Join PowerFit today and take the first step toward a healthier, stronger you.</p>
-                <a href="join.html" class="btn-primary">Get Started</a>
-            </div>
-        </section>
-
-        <section class="testimonials">
-            <h2 class="section-title">Member <span>Success Stories</span></h2>
-            <div class="testimonial-slider">
-                <div class="testimonial">
-                    <div class="testimonial-text">
-                        <p>"PowerFit completely changed my fitness journey. The trainers are exceptional and the community is so supportive. I've lost 30 pounds and gained confidence!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <h4>Anubhav Mishra</h4>
-                        <p>Member for 2 months</p>
+                    <div class="premium-card plan-card fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="plan-header">
+                            <h3>Elite</h3>
+                            <p class="price">₹2999<span>/mo</span></p>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> 24/7 Gym Access</li>
+                            <li><i class="fas fa-check"></i> All Equipment</li>
+                            <li><i class="fas fa-check"></i> Unlimited Group Classes</li>
+                            <li><i class="fas fa-check"></i> 2 PT Sessions/Month</li>
+                            <li><i class="fas fa-check"></i> Nutrition Counseling</li>
+                        </ul>
+                        <a href="join.html" class="btn-secondary" style="width: 100%; text-align: center;">Select Plan</a>
                     </div>
                 </div>
-                <div class="testimonial">
-                    <div class="testimonial-text">
-                        <p>"As an athlete, I needed a gym that could keep up with my training needs. PowerFit has everything I need and more. The 24/7 access fits perfectly with my schedule."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <h4>Anuj Soni</h4>
-                        <p>Member for 1 year</p>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-text">
-                        <p>"The personal training program at PowerFit is worth every penny. My trainer created a custom plan that actually works with my busy lifestyle."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <h4>Anurag Kumawat</h4>
-                        <p>Member for 6 months</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
             </div>
         </section>
 
         <section class="bmi-calculator">
-            <h2 class="section-title">BMI <span>Calculator</span></h2>
-            <div class="calculator-container">
-                <div class="calculator-inputs">
-                    <div class="input-group">
-                        <label for="height">Height (cm)</label>
-                        <input type="number" id="height" placeholder="Enter height">
+            <div class="container fade-in-up">
+                <div class="premium-card calc-wrapper">
+                    <div class="calc-left">
+                        <h2>Calculate your <span>BMI</span></h2>
+                        <p>Understanding your Body Mass Index is a great step to better fitness planning.</p>
+                        <div class="input-group">
+                            <label for="height">Height (cm)</label>
+                            <input type="number" id="height" placeholder="E.g., 175">
+                        </div>
+                        <div class="input-group">
+                            <label for="weight">Weight (kg)</label>
+                            <input type="number" id="weight" placeholder="E.g., 70">
+                        </div>
+                        <button id="calculate-bmi" class="btn-primary">Calculate</button>
                     </div>
-                    <div class="input-group">
-                        <label for="weight">Weight (kg)</label>
-                        <input type="number" id="weight" placeholder="Enter weight">
+                    <div class="calc-right">
+                        <h3>Your Result</h3>
+                        <div class="result-display">
+                            <div id="bmi-value">--</div>
+                            <div id="bmi-category">Enter Details</div>
+                        </div>
+                        <p id="bmi-message" style="margin-top: 1rem; text-align: center; color: var(--text-muted);">Ready to calculate.</p>
                     </div>
-                    <button id="calculate-bmi" class="btn-primary">Calculate BMI</button>
-                </div>
-                <div class="calculator-result">
-                    <h3>Your BMI</h3>
-                    <div id="bmi-value">-</div>
-                    <div id="bmi-category">-</div>
-                    <p id="bmi-message">Enter your height and weight to calculate your BMI</p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
+        <div class="footer-content fade-in-up">
             <div class="footer-logo">
                 <h2>Power<span>Fit</span></h2>
-                <p>Your journey to fitness excellence starts here.</p>
+                <p>Your journey to absolute fitness excellence starts here.</p>
             </div>
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="Home.html.html">Home</a></li>
+                    <li><a href="Home.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="Contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Fitness, Indore</p>
+                <h3>Visit Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Fitness, MR-10, Indore</p>
                 <p><i class="fas fa-phone"></i> +91-8319587080</p>
                 <p><i class="fas fa-envelope"></i> info@powerfit.com</p>
             </div>
@@ -229,10 +185,8 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 PowerFit Gym. All Rights Reserved.</p>
-            
-            </div>
-        
+            <p>&copy; 2025 PowerFit Gym. All Rights Reserved. Redesigned for Premium Experience.</p>
+        </div>
     </footer>
 
     <script src="./Home.js"></script>

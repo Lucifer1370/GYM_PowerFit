@@ -1,0 +1,140 @@
+/* Services Specific CSS */
+
+/* Banner */
+.page-banner.services-hero {
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.8), var(--dark-bg)), 
+                url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1470&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Fitness Programs */
+.fitness-programs {
+    padding: 6rem 0;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.program-card {
+    text-align: center;
+    border-top: 4px solid transparent;
+}
+
+.program-card:hover {
+    border-top-color: var(--primary-color);
+}
+
+.program-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 20px var(--primary-glow);
+}
+
+.program-details {
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+    text-align: left;
+}
+
+.program-details li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.program-details li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+/* Schedule */
+.schedule {
+    padding: 6rem 0;
+    background: var(--surface-bg-light);
+}
+
+.schedule-days {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.schedule-day {
+    padding: 0.8rem 2rem;
+    background: var(--surface-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+.schedule-day:hover, .schedule-day.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+.schedule-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    background: var(--surface-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: var(--transition-fast);
+}
+
+.schedule-item:hover {
+    border-color: rgba(255, 71, 87, 0.4);
+    box-shadow: var(--card-shadow);
+}
+
+.schedule-time {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    min-width: 150px;
+}
+
+.schedule-class h3 {
+    margin-bottom: 0.2rem;
+    font-size: 1.3rem;
+}
+
+.schedule-trainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+    .schedule-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .schedule-time {
+        margin-bottom: 1rem;
+    }
+}

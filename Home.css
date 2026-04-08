@@ -1,664 +1,211 @@
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Home specific CSS */
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
-    color: #ffffff;
-    background-color: #1a1a1a;
-    overflow-x: hidden;
-}
-
-/* Header and Navigation */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(26, 26, 26, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    padding: 0 2rem;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 0;
-}
-
-.nav-logo h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #ffffff;
-}
-
-.nav-logo span {
-    color: #ff4757;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    align-items: center;
-    gap: 2rem;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    position: relative;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: #ff4757;
-}
-
-.nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #ff4757;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #ff4757, #ff3742);
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    background: linear-gradient(135deg, #ff3742, #ff4757);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 71, 87, 0.3);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: #ffffff;
-    padding: 0.8rem 1.5rem;
-    border: 2px solid #ffffff;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.btn-secondary:hover {
-    background: #ffffff;
-    color: #1a1a1a;
-    transform: translateY(-2px);
-}
-
-/* Hamburger Menu */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: #ffffff;
-    margin: 3px 0;
-    transition: 0.3s;
-}
-
-/* Hero Section */
+/* Hero Banner */
 .hero {
-    height: 100vh;
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(25, 23, 23, 0.1)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23000" width="1200" height="800"/><g fill="%23333"><circle cx="200" cy="200" r="100" opacity="0.1"/><circle cx="800" cy="300" r="150" opacity="0.1"/><circle cx="1000" cy="600" r="120" opacity="0.1"/></g></svg>');
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.4)),
+                url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    position: relative;
+    padding: 0;
 }
 
-.hero-content h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    letter-spacing: 2px;
-}
-
-.hero-content h2 {
-    font-size: 2.5rem;
-    font-weight: 400;
-    color: #ff4757;
-    margin-bottom: 1rem;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    color: #cccccc;
-}
-
-.hero-btns {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-/* Features Section */
+/* Features section */
 .features {
-    padding: 6rem 2rem;
-    background: #222222;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-    color: #ffffff;
-}
-
-.section-title span {
-    color: #ff4757;
+    padding: 6rem 0;
 }
 
 .feature-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .feature-card {
-    background: #2a2a2a;
-    padding: 2rem;
-    border-radius: 15px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #333333;
 }
 
-.feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(255, 71, 87, 0.2);
+.feature-card .icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 71, 87, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--primary-color);
+    font-size: 2rem;
+    transition: var(--transition-smooth);
 }
 
-.feature-card i {
-    font-size: 3rem;
-    color: #ff4757;
-    margin-bottom: 1rem;
+.feature-card:hover .icon-wrapper {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 15px var(--primary-glow);
 }
 
 .feature-card h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
     margin-bottom: 1rem;
-    color: #ffffff;
-}
-
-.feature-card p {
-    color: #cccccc;
-    line-height: 1.6;
+    font-size: 1.3rem;
 }
 
 /* Plans Section */
 .plans {
-    padding: 6rem 2rem;
-    background: #1a1a1a;
+    padding: 6rem 0;
+    background-color: var(--surface-bg-light);
 }
 
 .plan-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 2.5rem;
+    align-items: center;
 }
 
 .plan-card {
-    background: #2a2a2a;
-    border-radius: 20px;
-    padding: 2rem;
-    text-align: center;
-    position: relative;
-    border: 2px solid #333333;
-    transition: all 0.3s ease;
-}
-
-.plan-card:hover {
-    border-color: #ff4757;
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(255, 71, 87, 0.2);
+    display: flex;
+    flex-direction: column;
 }
 
 .plan-card.popular {
-    border-color: #ff4757;
     transform: scale(1.05);
+    border-color: var(--primary-color);
+    box-shadow: var(--glass-shadow), 0 0 20px rgba(255, 71, 87, 0.2);
+}
+
+.plan-card.popular:hover {
+    transform: scale(1.05) translateY(-10px);
 }
 
 .popular-tag {
     position: absolute;
-    top: -10px;
+    top: 0;
     left: 50%;
-    transform: translateX(-50%);
-    background: #ff4757;
+    transform: translate(-50%, -50%);
+    background: var(--primary-color);
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.5rem;
     border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px var(--primary-glow);
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .plan-header h3 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #ffffff;
+    font-size: 1.5rem;
+    color: var(--text-muted);
 }
 
 .price {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #ff4757;
-    margin-bottom: 2rem;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-main);
 }
 
 .price span {
-    font-size: 1rem;
-    color: #cccccc;
-}
-
-.plan-features {
-    text-align: left;
-    margin-bottom: 2rem;
-}
-
-.plan-features p {
-    margin-bottom: 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.plan-features .fa-check {
-    color: #4caf50;
-}
-
-.plan-features .fa-times {
-    color: #f44336;
-}
-
-/* CTA Section */
-.cta {
-    padding: 6rem 2rem;
-    background: linear-gradient(135deg, #ff4757, #ff3742);
-    text-align: center;
-}
-
-.cta-content h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #ffffff;
-}
-
-.cta-content p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: #ffffff;
-    opacity: 0.9;
-}
-
-.cta .btn-primary {
-    background: #ffffff;
-    color: #ff4757;
-}
-
-.cta .btn-primary:hover {
-    background: #f0f0f0;
-    transform: translateY(-3px);
-}
-
-/* Testimonials Section */
-.testimonials {
-    padding: 6rem 2rem;
-    background: #222222;
-}
-
-.testimonial-slider {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.testimonial {
-    background: #2a2a2a;
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    border: 1px solid #333333;
-}
-
-.testimonial-text p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #cccccc;
-    margin-bottom: 2rem;
-    font-style: italic;
-}
-
-.testimonial-author h4 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 0.5rem;
-}
-
-.testimonial-author p {
-    color: #ff4757;
-    font-size: 0.9rem;
-}
-
-.testimonial-dots {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 2rem;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #666666;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.dot.active {
-    background: #ff4757;
-}
-
-/* BMI Calculator Section */
-.bmi-calculator {
-    padding: 6rem 2rem;
-    background: #1a1a1a;
-}
-
-.calculator-container {
-    max-width: 800px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-}
-
-.input-group {
-    margin-bottom: 1.5rem;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #ffffff;
+    color: var(--text-muted);
     font-weight: 500;
 }
 
-.input-group input {
-    width: 100%;
-    padding: 1rem;
-    border: 2px solid #333333;
-    border-radius: 10px;
-    background: #2a2a2a;
-    color: #ffffff;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
+.plan-features {
+    margin-bottom: 2.5rem;
+    flex-grow: 1;
 }
 
-.input-group input:focus {
-    outline: none;
-    border-color: #ff4757;
+.plan-features li {
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 500;
 }
 
-.calculator-result {
+.plan-features li i {
+    color: #4caf50;
+}
+
+.plan-features li.disabled {
+    color: #555;
+}
+
+.plan-features li.disabled i {
+    color: #f44336;
+}
+
+/* BMI Section */
+.bmi-calculator {
+    padding: 6rem 0;
+}
+
+.calc-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    background: linear-gradient(to right, var(--surface-bg), var(--surface-bg-light));
+}
+
+.calc-left h2 {
+    font-size: 2rem;
+}
+
+.calc-left h2 span {
+    color: var(--primary-color);
+}
+
+.calc-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark-bg);
+    border-radius: 12px;
+    padding: 3rem;
+    border: 1px solid var(--border-color);
+}
+
+.result-display {
     text-align: center;
-    background: #2a2a2a;
-    padding: 2rem;
-    border-radius: 15px;
-    border: 1px solid #333333;
-}
-
-.calculator-result h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #ffffff;
+    margin-top: 1rem;
 }
 
 #bmi-value {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #ff4757;
-    margin-bottom: 0.5rem;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-shadow: 0 0 20px var(--primary-glow);
+    line-height: 1;
 }
 
 #bmi-category {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 1rem;
-    color: #ffffff;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-#bmi-message {
-    color: #cccccc;
-    font-size: 0.9rem;
-}
-
-/* Footer */
-footer {
-    background: #111111;
-    padding: 3rem 2rem 1rem;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.footer-logo h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #ffffff;
-}
-
-.footer-logo span {
-    color: #ff4757;
-}
-
-.footer-logo p {
-    color: #cccccc;
-    line-height: 1.6;
-}
-
-.footer-links h3,
-.footer-contact h3,
-.footer-social h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #ffffff;
-}
-
-.footer-links ul {
-    list-style: none;
-}
-
-.footer-links ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-links ul li a {
-    color: #cccccc;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-links ul li a:hover {
-    color: #ff4757;
-}
-
-.footer-contact p {
-    color: #cccccc;
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.footer-contact i {
-    color: #ff4757;
-    width: 20px;
-}
-
-.social-icons {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: #2a2a2a;
-    color: #ffffff;
-    border-radius: 50%;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-icons a:hover {
-    background: #ff4757;
-    transform: translateY(-3px);
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid #333333;
-    color: #cccccc;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
+@media (max-width: 900px) {
+    .plan-card.popular {
+        transform: scale(1);
     }
-    
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: rgba(26, 26, 26, 0.98);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        padding: 2rem 0;
-    }
-    
-    .nav-menu.active {
-        left: 0;
-    }
-    
-    .nav-menu li {
-        margin: 1rem 0;
-    }
-    
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero-content h2 {
-        font-size: 1.8rem;
-    }
-    
-    .hero-btns {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .calculator-container {
+    .calc-wrapper {
         grid-template-columns: 1fr;
         gap: 2rem;
-    }
-    
-    .plan-card.popular {
-        transform: none;
-    }
-    
-    .feature-cards {
-        grid-template-columns: 1fr;
-    }
-    
-    .plan-cards {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    
-    .hero-content h2 {
-        font-size: 1.5rem;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-    }
-    
-    .feature-card,
-    .plan-card {
-        padding: 1.5rem;
-    }
-    
-    .calculator-result {
-        padding: 1.5rem;
-    }
-    
-    #bmi-value {
-        font-size: 2.5rem;
     }
 }

@@ -1,0 +1,141 @@
+/* Auth (Login/Join) Specific CSS */
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 2rem 4rem; /* Top padding to account for fixed navbar */
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(30, 10, 10, 0.85)),
+                url('https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=1469&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.auth-box {
+    background: var(--surface-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+.auth-box h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.auth-box h2 span {
+    color: var(--primary-color);
+}
+
+.auth-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+/* Membership select styles for Join page */
+.membership-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.membership-option {
+    background: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.membership-option:hover {
+    border-color: rgba(255, 71, 87, 0.5);
+}
+
+.membership-option.selected {
+    border-color: var(--primary-color);
+    background: rgba(255, 71, 87, 0.05);
+    box-shadow: 0 0 15px rgba(255, 71, 87, 0.1);
+}
+
+.membership-option h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.membership-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.membership-price span {
+    font-size: 0.9rem;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-top: 5px;
+    accent-color: var(--primary-color);
+}
+
+.checkbox-group label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.form-footer a {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .auth-box {
+        padding: 2rem 1.5rem;
+    }
+    .membership-options {
+        grid-template-columns: 1fr;
+    }
+}
